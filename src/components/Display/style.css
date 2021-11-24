@@ -1,0 +1,20 @@
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  flex-wrap: wrap;
+  background-color: blanchedalmond;
+}
+.cards div {
+  margin: 1%;
+  width: 30%;
+  height: 350px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: burlywood;
+}

@@ -1,0 +1,65 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+body{
+    background-color: var(--orange);
+}
+.image img {
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --orange:#EB5E28;
+    --black:#252422;
+    --neerBlack:#403D39;
+    --gray:#CCC5B9;
+    --floral:#FFFCF2;
+}
+/* https://coolors.co/fffcf2-ccc5b9-403d39-252422-eb5e28 */
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin: 10% auto;
+    width: 70%;
+    background-color: #fff;
+    box-shadow: -1px 5px 29px 0px var(--neerBlack);
+}
+.container div{
+    width: 50%;
+    height:auto;
+    /* flex-wrap: wrap; */
+}
+label{
+    /* display: block; */
+    margin: 2%;
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.input:focus {
+    border: 5px solid purple;
+  }
+form{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    background-color: var(--neerBlack); 
+    color: white; 
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* border: 2px solid #4CAF50; */
+  }
