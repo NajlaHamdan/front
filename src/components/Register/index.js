@@ -23,14 +23,13 @@ const Register = () => {
       });
   }
   return (
-    
     <div className="container">
       <div className="image">
         <img src="/brooke-lark-oaz0raysASk-unsplash.jpg" alt="food" />
       </div>
       <div className="form">
         <form onSubmit={register}>
-        <p>Sign up</p>
+          <p>Sign up</p>
           <div className="part">
             {/* <label>user Name</label> */}
             <input type="text" placeholder="user name" name="userName" />
@@ -56,7 +55,10 @@ const Register = () => {
             <input type="date" placeholder="birth date" name="bDate" />
           </div>
           <input type="submit" value="sign up" />
-          <center> Already have account <a>sign in</a></center>
+          <center>
+            {" "}
+            Already have account <a>sign in</a>
+          </center>
         </form>
       </div>
     </div>

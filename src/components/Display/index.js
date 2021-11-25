@@ -6,7 +6,7 @@ import "./style.css";
 const BASE_URL = "http://localhost:4000"; //alt +arrow to top+bottom
 
 const Display = ({ meal }) => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   function description(item) {
     axios
       .post(`${BASE_URL}/postItem`, {

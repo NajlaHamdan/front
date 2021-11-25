@@ -16,20 +16,21 @@ const Description = () => {
   };
 
   return (
-      <>
-    {item.map((item, index) => (
+    <>
+      {item.map((item, index) => (
         <div>
           <p key={item._id}>{item.title}</p>
           <p>Ingredients {item.Ingredients}</p>
           <img src={item.src} alt={item.title} />
         </div>
       ))}
-      </>
+    </>
   );
 };
 
 export default Description;
-{/* <div>
+{
+  /* <div>
       {
         <>
           <div>
@@ -46,4 +47,5 @@ export default Description;
           </button> 
         </>
       }
-    </div> */}
+    </div> */
+}
