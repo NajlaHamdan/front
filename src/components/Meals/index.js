@@ -27,7 +27,7 @@ const Meals = () => {
   return (
     <div>
       {/* {loading ? <p>Data is loading...</p>:<div> */}
-      {meal.length && <Display meal={meal} />}
+      { <Display meal={meal} />}
       {/* </div>} */}
     </div>
   );

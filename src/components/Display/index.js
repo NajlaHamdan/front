@@ -25,11 +25,12 @@ const Display = ({ meal }) => {
       <div className="cards">
         {meal.map((item, index) => (
           <div
+          key={item._id}
             onClick={() => {
               description(item);
             }}
           >
-            <p key={item._id}>{item.title}</p>
+            <p key={item._id}>{item._id}</p>
             <p>Ingredients {item.Ingredients}</p>
             <img src={item.src} alt={item.title} />
           </div>

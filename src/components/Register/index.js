@@ -32,15 +32,15 @@ const Register = () => {
           <p>Sign up</p>
           <div className="part">
             {/* <label>user Name</label> */}
-            <input type="text" placeholder="user name" name="userName" />
+            <input type="text" placeholder="user name" name="userName" required />
           </div>
           <div className="part">
             {/* <label>Email</label> */}
-            <input type="email" placeholder="email" name="email" />
+            <input type="email" placeholder="email" name="email" required />
           </div>
           <div className="part">
             {/* <label>password</label> */}
-            <input type="password" placeholder="password" name="password" />
+            <input type="password" placeholder="password" name="password" required />
           </div>
           <div className="part">
             {/* <label>phone number</label> */}
@@ -48,6 +48,7 @@ const Register = () => {
               type="number"
               placeholder="phone number"
               name="phoneNumber"
+              required
             />
           </div>
           <div className="part">

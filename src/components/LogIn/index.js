@@ -12,7 +12,7 @@ const LogIn = () => {
     e.preventDefault();
     console.log(e.target.email.value);
     axios
-      .post(`${BASE_URL}/logIn`, {
+      .post(`${BASE_URL}/login`, {
         // userName: e.target.userName.value,
         // phoneNumber: e.target.phoneNumber.value,
         email: e.target.email.value,
