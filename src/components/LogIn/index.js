@@ -21,12 +21,13 @@ const LogIn = () => {
           })
           .then(function (res) {
               console.log(res.data);
-              const re=res.data;
-              console.log(re);
-              console.log(typeof(re));
-              setId(re);
+              const userId=res.data;
+              console.log(userId);
+              console.log(typeof(userId));
+              setId(userId);
               console.log(id);
-              navigate(`/Home/${re}`);
+              localStorage.setItem("users",JSON.stringify(userId))
+              navigate(`/Home/${userId}`);
           })
           .catch(function (error) {
             console.log(error);
