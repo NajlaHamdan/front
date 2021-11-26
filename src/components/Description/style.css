@@ -1,0 +1,15 @@
+.box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.box div{
+    width: 50%;
+}
+.box image{
+    height: 100%;
+    width: 100%;
+}
+.HowToPrepare{
+    margin: 2% ;
+}

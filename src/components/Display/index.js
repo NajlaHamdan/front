@@ -30,8 +30,8 @@ const Display = ({ meal }) => {
               description(item);
             }}
           >
-            <p key={item._id}>{item._id}</p>
-            <p>Ingredients {item.Ingredients}</p>
+            <p key={item._id}>{item.title}</p>
+            {/* <p>Ingredients {item.Ingredients}</p> */}
             <img src={item.src} alt={item.title} />
           </div>
         ))}

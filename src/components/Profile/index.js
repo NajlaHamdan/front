@@ -10,19 +10,22 @@ const Profile = () => {
   const profile = async () => {
     let id = localStorage.getItem("users");
     console.log(id);
-    const result = await axios.get(`${BASE_URL}/profile`, { id });
-    console.log(result);
+    const result = await axios
+      .get(`${BASE_URL}/profile`, { id })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    console.log(result.data);
     setUserInfo(result);
   };
   console.log(userInfo);
   return (
     <div className="container">
-    {/* <div className="form"> */}
-      <form >
+      {/* <div className="form"> */}
+      <form>
         <p>Sign up</p>
         <div className="part">
           <label>{userInfo.userName}</label>
-          <input type="text"  value={userInfo.userName} name="userName" />
+          <input type="text" value={userInfo.userName} name="userName" />
         </div>
         <div className="part">
           {/* <label>Email</label> */}
@@ -34,11 +37,7 @@ const Profile = () => {
         </div>
         <div className="part">
           {/* <label>phone number</label> */}
-          <input
-            type="number"
-            placeholder="phone number"
-            name="phoneNumber"
-          />
+          <input type="number" placeholder="phone number" name="phoneNumber" />
         </div>
         <div className="part">
           {/* <label>birth date</label> */}
@@ -50,9 +49,9 @@ const Profile = () => {
           Already have account <a>sign in</a>
         </center>
       </form>
-    {/* </div> */}
-  </div>
-  )
+      {/* </div> */}
+    </div>
+  );
 };
 
 export default Profile;

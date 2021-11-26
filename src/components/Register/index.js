@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const BASE_URL = "http://localhost:4000";
 const Register = () => {
   function register(e) {
@@ -29,7 +30,7 @@ const Register = () => {
       </div>
       <div className="form">
         <form onSubmit={register}>
-          <p>Sign up</p>
+          <p>Get started</p>
           <div className="part">
             {/* <label>user Name</label> */}
             <input type="text" placeholder="user name" name="userName" required />
@@ -55,10 +56,10 @@ const Register = () => {
             {/* <label>birth date</label> */}
             <input type="date" placeholder="birth date" name="bDate" />
           </div>
-          <input type="submit" value="sign up" />
-          <center>
+          <button type="submit" value="Sign up" >Sign up</button>
+          <center style={{margin:`1%`}}>
             {" "}
-            Already have account <a>sign in</a>
+            Already have account <Link to="/logIn" style={{color:`#EB5E28`,textDecoration:`none`}}>Sign in</Link>
           </center>
         </form>
       </div>
