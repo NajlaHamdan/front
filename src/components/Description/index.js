@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { GiRiceCooker } from "react-icons/gi";
 import { IconContext } from "react-icons";
+import Nav from "../Nav";
 import "./style.css";
 const BASE_URL = "http://localhost:4000";
 const Description = () => {
@@ -62,6 +63,8 @@ const Description = () => {
   };
 
   return (
+    <>
+    <Nav />
     <div className="meal">
       {item.map((item, index) => (
         <div key={item._id}>
@@ -81,11 +84,11 @@ const Description = () => {
             <p className="title" style={{ display: "inline" }}>
               HowToPrepare
             </p>
-            <IconContext.Provider
+            {/* <IconContext.Provider
               value={{ color: "#EB5E28", size: "1.5rem", display: "inline" }}
             >
               <GiRiceCooker />
-            </IconContext.Provider>
+            </IconContext.Provider> */}
             <p className="HowToPrepare">{item.HowToPrepare}</p>
           </div>
           <div className="timepeople">
@@ -101,12 +104,13 @@ const Description = () => {
         </div>
       ))}
       <>
-        <form onSubmit={postComment} method="post">
+        {/* <form onSubmit={postComment} method="post">
           <input type="text" name="comment" />
           <button type="submit" />
-        </form>
+        </form> */}
       </>
     </div>
+    </>
   );
 };
 

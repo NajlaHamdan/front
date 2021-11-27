@@ -7,6 +7,7 @@ import "./style.css";
 const BASE_URL = "http://localhost:4000";
 const LogIn = () => {
   const [id, setId] = useState("");
+  const [error,setError]=useState("");
   const navigate = useNavigate();
   function logIn(e) {
     e.preventDefault();
@@ -27,10 +28,11 @@ const LogIn = () => {
         setId(userId);
         console.log(id);
         localStorage.setItem("users", JSON.stringify(userId));
-        navigate(`/Home/${userId}`);
+        navigate(`/home`);
       })
       .catch(function (error) {
         console.log(error);
+        setError("YOU AREADY HAVE ACCOUND BLEASE LOGIN");
       });
   }
   console.log(id);
@@ -42,6 +44,9 @@ const LogIn = () => {
           <img src="/brooke-lark-HlNcigvUi4Q-unsplash.jpg" alt="food" />
         </div>
         <form onSubmit={logIn} method="post">
+          <div className={error? "show":"hide"}>
+            <span> {error}</span>
+          </div>
           <input type="email" placeholder="Enter your email" name="email" required/>
           <input
             type="password"

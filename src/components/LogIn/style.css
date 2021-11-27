@@ -63,3 +63,10 @@ button {
     display: inline-block;
     border: none;
   }
+  .hide{
+      display: none;
+  }
+  .show{
+      color:#e29578;
+      background-color: #ffddd2;
+  }

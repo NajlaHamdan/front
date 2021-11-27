@@ -24,7 +24,7 @@ const Register = () => {
         // console.log(userId);
         // console.log(typeof userId);
         localStorage.setItem("users", JSON.stringify(userId));
-        navigate(`/Home/${userId}`);
+        navigate(`/home`);
       })
       .catch(function (error) {
         console.log(error);

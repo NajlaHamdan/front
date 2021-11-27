@@ -6,17 +6,17 @@ import { IconContext } from "react-icons";
 const Nav = () => {
   return (
     <div className="navBar">
-      <Link to="/home" style={{textDecoration:"none",color:"#FFFCF2" ,paddingRight:"15px"}}>
+      {/* <Link to="/home" style={{textDecoration:"none",color:"#FFFCF2" ,paddingRight:"15px"}}>
         <p>home</p>
-      </Link>
-      <Link to="/meals" style={{textDecoration:"none",color:"#FFFCF2"}}>
+      </Link> */}
+      <Link to="/home" style={{textDecoration:"none",color:"#FFFCF2"}}>
         <p>meal</p>
       </Link>
       <IconContext.Provider
         value={{ color: "white", className: "global-class-name", size: "2rem"  }}
       >
         <div className="dropdown">
-          <Link to="/profile" className="dropbtn" value={{textDecoration:"none",color:"#FFFCF2",size:"2rem", paddingTop:"10px"}}>
+          <Link to="/profile" className="dropbtn" value={{textDecoration:"none",color:"#FFFCF2",size:"2rem", padding:"3px"}}>
             <CgProfile />
           </Link>
           <div className="dropdown-content">
