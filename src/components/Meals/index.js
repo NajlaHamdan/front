@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Display from "../Display";
+import Nav from "../Nav";
 const BASE_URL = "http://localhost:4000";
 const Meals = () => {
   const [meal, setMeal] = useState([]);
@@ -26,6 +27,7 @@ const Meals = () => {
   }
   return (
     <div>
+      <Nav /> 
       {/* {loading ? <p>Data is loading...</p>:<div> */}
       { <Display meal={meal} />}
       {/* </div>} */}

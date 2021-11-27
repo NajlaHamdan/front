@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       {/* <Meals/> */}
-      <Nav />
+      {/* <Nav /> */}
     
       <Routes>
         <Route exact path="/logIn" element={<LogIn />} />

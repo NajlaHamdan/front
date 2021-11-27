@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Nav from "../Nav";
 import './style.css';
 const BASE_URL = "http://localhost:4000";
 const Profile = () => {
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState("");
+
   useEffect(() => {
     profile();
   }, []);
@@ -23,6 +25,8 @@ const Profile = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <div className="content">
     <div className="profile">
       <div className="image">
@@ -34,15 +38,15 @@ const Profile = () => {
     <div className="content">
       
         <label>Email</label>
-        <input type="email" placeholder="email" name="email" value={userInfo[0].email} disabled  />
-        <input type="text" placeholder="user name" name="userName" value={userInfo[0].userName} disabled />
+        <input type="email" placeholder="email" name="email" value={userInfo ? userInfo[0].email :"lodaing"} disabled  />
+        <input type="text" placeholder="user name" name="userName" value={userInfo ? userInfo[0].userName :"lodaing"} disabled />
       
         <label>password</label>
         <input
           type="password"
           placeholder="password"
           name="password"
-          value={userInfo[0].password}
+          value={userInfo ? userInfo[0].password :"lodaing"}
           disabled
         />
         <label>phone number</label>
@@ -50,14 +54,15 @@ const Profile = () => {
           type="number"
           placeholder="phone number"
           name="phoneNumber"
-          value={userInfo[0].phoneNumber}
+          value={userInfo ? userInfo[0].phoneNumber :"lodaing"}
           disabled
         />
         <label>birth date</label>
-        <input type="date" placeholder="birth date" name="bDate" value={userInfo[0].bDate} disabled />
+        <input type="date" placeholder="birth date" name="bDate" value={userInfo ? userInfo[0].bDate :"lodaing"} disabled />
         </div>
         </div>
     </div>
+    </>
   );
 };
 

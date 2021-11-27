@@ -42,11 +42,12 @@ const LogIn = () => {
           <img src="/brooke-lark-HlNcigvUi4Q-unsplash.jpg" alt="food" />
         </div>
         <form onSubmit={logIn} method="post">
-          <input type="email" placeholder="Enter your email" name="email" />
+          <input type="email" placeholder="Enter your email" name="email" required/>
           <input
             type="password"
             placeholder="Enter your password"
             name="password"
+            required
           />
           <button type="submit">Sign in</button>
         </form>
