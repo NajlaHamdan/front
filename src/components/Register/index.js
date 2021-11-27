@@ -1,10 +1,12 @@
 import React from "react";
 import "./style.css";
 import axios from "axios";
+import { useNavigate } from "react-router";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const BASE_URL = "http://localhost:4000";
 const Register = () => {
+  const navigate = useNavigate();
   function register(e) {
     e.preventDefault();
     console.log(e.target.bDate.value);
@@ -17,7 +19,12 @@ const Register = () => {
         bDate: e.target.bDate.value,
       })
       .then(function (res) {
-        // navigate(`/description/${item.trackId}`);
+        // console.log(res.data);
+        const userId = res.data;
+        // console.log(userId);
+        // console.log(typeof userId);
+        localStorage.setItem("users", JSON.stringify(userId));
+        navigate(`/Home/${userId}`);
       })
       .catch(function (error) {
         console.log(error);
@@ -28,12 +35,17 @@ const Register = () => {
       <div className="image">
         <img src="/brooke-lark-oaz0raysASk-unsplash.jpg" alt="food" />
       </div>
-      <div className="form">
+      <div className="form" method="post">
         <form onSubmit={register}>
           <p>Get started</p>
           <div className="part">
             {/* <label>user Name</label> */}
-            <input type="text" placeholder="user name" name="userName" required />
+            <input
+              type="text"
+              placeholder="user name"
+              name="userName"
+              required
+            />
           </div>
           <div className="part">
             {/* <label>Email</label> */}
@@ -41,7 +53,12 @@ const Register = () => {
           </div>
           <div className="part">
             {/* <label>password</label> */}
-            <input type="password" placeholder="password" name="password" required />
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              required
+            />
           </div>
           <div className="part">
             {/* <label>phone number</label> */}
@@ -56,10 +73,18 @@ const Register = () => {
             {/* <label>birth date</label> */}
             <input type="date" placeholder="birth date" name="bDate" />
           </div>
-          <button type="submit" value="Sign up" >Sign up</button>
-          <center style={{margin:`1%`}}>
-            {" "}
-            Already have account <Link to="/logIn" style={{color:`#EB5E28`,textDecoration:`none`}}>Sign in</Link>
+          <button type="submit" value="Sign up">
+            Sign up
+          </button>
+          <center style={{ margin: `1%` }}>
+            
+            Already have account
+            <Link
+              to="/logIn"
+              style={{ color: `#EB5E28`, textDecoration: `none` }}
+            >
+              Sign in
+            </Link>
           </center>
         </form>
       </div>

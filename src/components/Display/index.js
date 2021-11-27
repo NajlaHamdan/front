@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import Description from "./../Description";
+import {CgMoreO} from "react-icons/cg";
+import {IconContext} from "react-icons"
 import "./style.css";
 const BASE_URL = "http://localhost:4000"; //alt +arrow to top+bottom
 
@@ -30,9 +32,14 @@ const Display = ({ meal }) => {
               description(item);
             }}
           >
-            <p key={item._id}>{item.title}</p>
-            {/* <p>Ingredients {item.Ingredients}</p> */}
+            
             <img src={item.src} alt={item.title} />
+            <p key={item._id}>{item.title}</p>
+            <IconContext.Provider
+              value={{ color: "#EB5E28", size: "1.5rem", display: "inline" }}
+            >
+            <CgMoreO/>
+            </IconContext.Provider>
           </div>
         ))}
       </div>

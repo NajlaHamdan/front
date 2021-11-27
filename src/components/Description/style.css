@@ -1,15 +1,46 @@
-.box{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+.meal {
+  margin: 0% auto;
+  width: 70%;
 }
-.box div{
-    width: 50%;
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
-.box image{
-    height: 100%;
-    width: 100%;
+.smallBox {
+  display: flex;
+  flex-wrap: wrap;
 }
-.HowToPrepare{
-    margin: 2% ;
+.smallBox div {
+  width: 50%;
+  height: 300px;
+}
+.smallBox div img {
+  height: 100%;
+  width: 100%;
+}
+.timepeople {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.nopeople {
+  margin: 1%;
+  background-color: #ffddd2;
+  padding: 2%;
+  border-radius: 7%;
+}
+.cooktime {
+  margin: 1%;
+  background-color: #83c5be;
+  padding: 2%;
+  border-radius: 7%;
+}
+.title {
+  font-size: 2rem;
+  color: #e29578;
+}
+.title p{
+    border-bottom: 2px solid #006d77;
 }

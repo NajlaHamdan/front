@@ -1,7 +1,7 @@
 .navBar{
     height: 10%;
-    background-color: #EB5E28;
-    color: #403D39;
+    background-color: #006d77;
+    color: #edf6f9;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -14,9 +14,9 @@ Link{
     text-decoration: none;
 }
 /*  */
-.navBar  .dropdown:hover .dropbtn {
-    background-color: red;
-  }
+/* .navBar  .dropdown:hover .dropbtn {
+    background-color: #83c5be;
+  } */
   .dropdown .dropbtn {
     font-size: 16px;  
     border: none;
@@ -52,3 +52,4 @@ Link{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+ 

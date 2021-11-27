@@ -1,55 +1,62 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import './style.css';
 const BASE_URL = "http://localhost:4000";
 const Profile = () => {
   const [userInfo, setUserInfo] = useState([]);
   useEffect(() => {
     profile();
   }, []);
-  const profile = async () => {
-    let id = localStorage.getItem("users");
+  const profile =  () => {
+    let id = JSON.parse(localStorage.getItem("users"));
     console.log(id);
-    const result = await axios
-      .get(`${BASE_URL}/profile`, { id })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    console.log(result.data);
-    setUserInfo(result);
+     axios
+      .get(`${BASE_URL}/profile/${id}`)
+      .then((result) => {
+        console.log(result.data);
+        setUserInfo(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-  console.log(userInfo);
+
   return (
-    <div className="container">
-      {/* <div className="form"> */}
-      <form>
-        <p>Sign up</p>
-        <div className="part">
-          <label>{userInfo.userName}</label>
-          <input type="text" value={userInfo.userName} name="userName" />
+    <div className="content">
+    <div className="profile">
+      <div className="image">
+        <img src="jason-leung-Xaanw0s0pMk-unsplash.jpg" alt="bacground"/>
+      </div>
+      <div className="profileImge">
+        <img src="profile.png" />
+      </div>
+    <div className="content">
+      
+        <label>Email</label>
+        <input type="email" placeholder="email" name="email" value={userInfo[0].email} disabled  />
+        <input type="text" placeholder="user name" name="userName" value={userInfo[0].userName} disabled />
+      
+        <label>password</label>
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
+          value={userInfo[0].password}
+          disabled
+        />
+        <label>phone number</label>
+        <input
+          type="number"
+          placeholder="phone number"
+          name="phoneNumber"
+          value={userInfo[0].phoneNumber}
+          disabled
+        />
+        <label>birth date</label>
+        <input type="date" placeholder="birth date" name="bDate" value={userInfo[0].bDate} disabled />
         </div>
-        <div className="part">
-          {/* <label>Email</label> */}
-          <input type="email" placeholder="email" name="email" />
         </div>
-        <div className="part">
-          {/* <label>password</label> */}
-          <input type="password" placeholder="password" name="password" />
-        </div>
-        <div className="part">
-          {/* <label>phone number</label> */}
-          <input type="number" placeholder="phone number" name="phoneNumber" />
-        </div>
-        <div className="part">
-          {/* <label>birth date</label> */}
-          <input type="date" placeholder="birth date" name="bDate" />
-        </div>
-        <input type="submit" value="sign up" />
-        <center>
-          {" "}
-          Already have account <a>sign in</a>
-        </center>
-      </form>
-      {/* </div> */}
     </div>
   );
 };

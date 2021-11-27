@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import Meals from "./components/Meals";
 import Description from "./components/Description";
+import LogOut from "./components/LogOut";
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
     
       <Routes>
         <Route exact path="/logIn" element={<LogIn />} />
+        <Route exact path="/LogOut" element={<LogOut />} />
         <Route exact path="/meals" element={<Meals />} />
         <Route exact path="/description" element={<Description />} />
         <Route path="/home/:id" element={<Home />} />

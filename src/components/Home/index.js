@@ -5,7 +5,7 @@ const Home = () => {
   console.log(id);
   return (
     <div>
-      <h1>hello</h1>
+      
     </div>
   );
 };

@@ -41,7 +41,7 @@ const LogIn = () => {
         <div className="image">
           <img src="/brooke-lark-HlNcigvUi4Q-unsplash.jpg" alt="food" />
         </div>
-        <form onSubmit={logIn}>
+        <form onSubmit={logIn} method="post">
           <input type="email" placeholder="Enter your email" name="email" />
           <input
             type="password"
